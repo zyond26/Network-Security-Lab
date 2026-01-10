@@ -1,0 +1,42 @@
+
+Day 2 - IP, GATEWAY & ROUTE
+
+
+#### IP = địa chỉ nhà  của máy tính
+```
+192.168.56.101
+
+192.168.56 → khu phố
+101 → số nhà
+```
+📌 Hai máy cùng khu phố → nói chuyện trực tiếp
+
+#### Gateway = cổng ra ngoài khu phố
+
+Ví dụ đời thường:
+- Em muốn đi sang quận khác
+- Phải đi qua **cổng chính**
+
+📌 Trong mạng:
+- Gateway thường là **router**
+- Nếu không có gateway → **không ra ngoài được**
+
+#### Route = bản đồ chỉ đường
+
+Máy tính luôn hỏi:
+
+> “Muốn gửi gói tin này thì đi đường nào?”
+
+📌 Nếu:
+- Cùng mạng → gửi thẳng
+- Khác mạng → gửi cho gateway
+
+
+##### Dùng **ip a** để xem IP
+##### Dùng **ip route** để xem gateway
+#### Hiểu ip route
+
+- 192.168.56.0/24 là địa chỉ của cả mạng, không phải IP máy
+- src là IP của chính máy đó
+- Mỗi máy trong LAN phải có IP khác nhau
+- Không có default route là bình thường trong Host-only
