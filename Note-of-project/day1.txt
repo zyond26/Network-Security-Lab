@@ -1,0 +1,60 @@
+Day 1 - xây dựng lab mạng cơ bản
+
+### Biết cài đặt 2 máy ảo ở virtual box : ubuntu và kaliLinux
+- Kiểm tra mạng ở 2 máy là : *ip a*
+- -> kết quả ra vd : inet 192.168.56.103/24
+			-> thì 192.168.56.103 là  ip ( địa chỉ máy)
+			-> /24 là cùng mạng 
+		-> cùng đường mới nói chuyện được 
+## Network là gì?
+- Network là nhiều máy tính kết nối với nhau để trao đổi dữ liệu.
+- Internet là tập hợp rất nhiều network nhỏ.
+
+**Mạng máy tính** = nhiều máy tính **nối với nhau để trao đổi dữ liệu**
+
+Ví dụ:
+- 2 máy nối dây LAN → mạng
+- WiFi nhà em → mạng
+- Internet = **nhiều mạng nối lại**
+
+📌 **Ví dụ đời thường**
+- Mạng = lớp học
+- Internet = cả trường học
+
+## Vì sao cần network?
+- Chia sẻ dữ liệu
+- Truy cập Internet
+- Giao tiếp giữa các máy
+
+## Thành phần mạng
+|Thành phần|Giải thích|
+|---|---|
+|Máy tính|Người tham gia|
+|Dây / WiFi|Con đường|
+|Router|Người điều phối|
+|Dữ liệu|Thư từ|
+- Máy tính (host)
+- Router
+- Dây mạng / WiFi
+
+``` windows
+ở windows thì :
+- IPv4 Address → địa chỉ máy
+    
+- Default Gateway → router
+```
+
+## Lab là gì?
+Lab là môi trường giả để học và thử nghiệm bảo mật, tránh ảnh hưởng mạng thật.
+
+## Mô hình lab
+- Kali Linux: Attacker - 192.168.56.102
+- Ubuntu Server: Target / Defender
+
+## Mạng sử dụng
+- Host-only network
+- Không kết nối Internet
+
+## Kết quả
+- Hai máy ping được nhau
+- Mỗi máy có IP riêng trong cùng mạng
