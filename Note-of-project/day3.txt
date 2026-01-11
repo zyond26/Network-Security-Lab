@@ -1,0 +1,73 @@
+Day 03 - hiểu ARP
+
+
+## ARP là gì?
+ARP dùng để tìm MAC tương ứng với IP.
+
+## ARP table
+Là bảng lưu IP → MAC.
+
+## Điểm yếu
+ARP không xác thực, dễ bị giả mạo.
+
+### 2.1 VẤN ĐỀ LỚN CỦA MẠNG LAN
+
+Máy tính biết:
+
+- IP của máy kia
+
+❓ Nhưng:
+
+> **Gửi gói tin bằng cách nào?**
+
+📌 Trên mạng LAN:
+
+- Gửi bằng **MAC address**
+- IP chỉ để **định danh**
+
+### 🔹 2.2 MAC là gì?
+👉 **MAC = số serial của card mạng**
+
+Ví dụ:
+
+`08:00:27:aa:bb:cc`
+
+- Duy nhất
+- Không trùng
+
+📌 So sánh:
+- IP = địa chỉ nhà    
+- MAC = CMND
+
+### 🔹 2.3 ARP LÀ GÌ?
+👉 **ARP (Address Resolution Protocol)** = hỏi MAC
+Máy hỏi:
+
+> “Ai có IP 192.168.56.103 thì cho tôi MAC với?”
+
+📌 Máy kia trả lời:
+
+> “Tôi đây, MAC của tôi là xx:xx”
+
+### 🔹 2.4 ARP TABLE LÀ GÌ?
+👉 **ARP table** = sổ ghi nhớ
+
+Máy lưu:   `IP → MAC`
+
+📌 Để:
+- Không phải hỏi lại liên tục
+
+
+## VÌ SAO ARP NGUY HIỂM?
+
+❗ ARP **KHÔNG CÓ XÁC THỰC**
+
+👉 Nghĩa là:
+- Ai trả lời cũng tin
+- Hacker có thể **nói dối**
+
+📌 Ví dụ:
+
+> “Tôi là gateway”
+
+👉 Máy tin → gửi hết dữ liệu cho hacker
