@@ -1,0 +1,119 @@
+**Chủ đề:** Web Server Apache2 & truy cập qua mạng
+
+## 1️⃣ CÔNG CỤ SỬ DỤNG
+
+### 🔹 Apache2
+- Là **Web Server** (HTTP Server)
+- Nhận request từ client → trả về HTML
+- Chạy dưới dạng **service** của Linux
+
+### 🔹 Nano
+- Trình soạn thảo text trong terminal
+- Dùng để viết:
+    - HTML
+    - config
+    - script test
+
+### 🔹 Browser (Firefox)
+- Đóng vai **client**
+- Gửi HTTP request
+- Nhận HTTP response
+
+### 🔹 Kali Linux
+- Máy attacker
+- Dùng để:
+    - Truy cập web
+    - Chuẩn bị sniff / pentest
+
+## 🗂️ 2️⃣ KIẾN THỨC CỐT LÕI
+
+### 📌 Document Root
+
+`/var/www/html`
+
+- Apache **chỉ phục vụ file trong thư mục này**
+- File để ngoài → Apache coi như **không tồn tại**
+
+### 📌 HTTP hoạt động thế nào (đơn giản)
+
+`Browser → HTTP request → Apache → HTML response`
+
+### 📌 Port
+
+|Dịch vụ|Port|
+|---|---|
+|HTTP|80|
+|HTTPS|443|
+
+Apache mặc định nghe **port 80**
+
+## ⌨️ 3️⃣ CÁC LỆNH ĐÃ DÙNG & Ý NGHĨA
+
+### 🔹 Cài Apache2
+
+`sudo apt install apache2`
+
+👉 Cài web server
+
+### 🔹 Kiểm tra Apache có chạy không
+
+`systemctl status apache2`
+
+- `active (running)` → OK
+    
+- `inactive` → chưa chạy
+    
+
+### 🔹 Bật Apache : `sudo systemctl start apache2`
+
+### 🔹 Dừng Apache : `sudo systemctl stop apache2`
+
+### 🔹 Xem file web
+
+`ls /var/www/html`
+
+👉 Kiểm tra `login.html` có tồn tại không
+
+### 🔹 Sửa file HTML
+
+`nano /var/www/html/login.html`
+
+### 🔹 Lưu & thoát nano
+
+|Phím|Chức năng|
+|---|---|
+|Ctrl + O|Lưu|
+|Enter|Xác nhận|
+|Ctrl + X|Thoát|
+
+### 🔹 Truy cập web (Ubuntu) : `http://localhost/login.html`
+
+### 🔹 Truy cập web từ Kali
+
+`http://192.168.56.103/login.html`
+
+### 🔹 Sửa quyền file (khi bị lỗi)
+
+`sudo chmod 644 /var/www/html/login.html`
+
+## 🔐 4️⃣ GÓC NHÌN BẢO MẬT (QUAN TRỌNG NHẤT)
+
+### ❗ Những điều rút ra
+
+- Web chạy qua **HTTP → dữ liệu không mã hóa**
+    
+- Bất kỳ máy nào trong LAN cũng có thể:
+    
+    - Truy cập
+    - Nghe lén (sniff)
+    
+- Form đăng nhập là **mục tiêu tấn công số 1**
+    
+### 💣 Rủi ro thực tế
+
+|Rủi ro|Mô tả|
+|---|---|
+|Sniffing|Bắt user/pass|
+|MITM|Giả server|
+|Brute force|Không giới hạn|
+|Misconfig|Lộ file|
